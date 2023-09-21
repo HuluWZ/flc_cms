@@ -1,5 +1,5 @@
 module.exports = ({ env }) => ({
-  user_persmissions:{
+  users-persmissions:{
   cofig:{
     jwt:{
       jwtSecret: env("JWT_SECRET")
