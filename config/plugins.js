@@ -1,5 +1,11 @@
 module.exports = ({ env }) => ({
-  // ...
+  user_persmissions:{
+  cofig:{
+    jwt:{
+      jwtSecret: env("JWT_SECRET")
+    }
+  }
+  },
   upload: {
     config: {
       provider: "cloudinary",
