@@ -1,10 +1,10 @@
 module.exports = ({ env }) => ({
   'users-persmissions':{
-  cofig:{
-    jwt:{
-      jwtSecret: env("JWT_SECRET")
-    }
-  }
+    config:{
+      jwt:{
+        jwtSecret: env("JWT_SECRET")
+     }
+   }
   },
   upload: {
     config: {
@@ -20,5 +20,4 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  // ...
 });
