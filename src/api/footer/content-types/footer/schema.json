@@ -1,0 +1,79 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Footer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text",
+      "default": "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla",
+      "required": true
+    },
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "default": "+971 4 4548684"
+    },
+    "email": {
+      "type": "string",
+      "default": "talk2us@flc-me.com",
+      "required": true
+    },
+    "uaeAddress": {
+      "type": "string",
+      "default": "1501, Concord Tower, Media City, PO Box 283795, Dubai, UAE."
+    },
+    "indiaAddress": {
+      "type": "text",
+      "default": "401 B, Unitech Arcadia, South City 2, Sec 49, Gurugram - 122018 India.",
+      "required": true
+    },
+    "ksaAddress": {
+      "type": "text",
+      "default": "Al Tadamun Al Arabi Street, Mishrifah Dist, Jeddah SA",
+      "required": true
+    },
+    "copyright": {
+      "type": "text",
+      "default": "© 2023 FLC Group. All Rights Reserved.",
+      "required": true
+    },
+    "follow": {
+      "type": "string",
+      "default": "Follow Us"
+    },
+    "linkedin": {
+      "type": "string",
+      "default": "https://www.linkedin.com/",
+      "required": true
+    },
+    "facebook": {
+      "type": "string",
+      "default": "https://facebook.com"
+    },
+    "instagram": {
+      "type": "string",
+      "default": "https://instagram.com/",
+      "required": true
+    },
+    "whatsapp": {
+      "type": "string",
+      "default": "https://web.whatsapp.com/",
+      "required": true
+    }
+  }
+}

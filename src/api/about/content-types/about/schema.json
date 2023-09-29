@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Beyond   Results",
+      "required": true
+    },
+    "descriptionOne": {
+      "type": "text",
+      "default": "We're all about Consumer Engagement and Experiential Marketing, across four dynamic business verticals: Shopper Marketing & Brand Activations, Events & Exhibitions, social media & Influencer Management, and Production & Model Management. We provide a 180* BTL approach to our clients.",
+      "required": true
+    },
+    "descriptionTwo": {
+      "type": "text",
+      "required": true,
+      "default": "With over a decade of shaping the industry, we've created unmatched experiences. Our journey spans 14 years, during which we've partnered with over 75 brands, curating over 1000+ successful campaigns.   We have the experience of working with companies such as Huawei, Samsung, Hisense, Acer, P&G, Nestle, Aujan Coca Cola, Mondelez, IFFCO, Etude House, Coty Middle East, Estee Lauder – the list goes on. From conceptualization to strategy, from consumer engagement to online and on-ground brilliance, we've not just kept up with the ever-changing marketing trends; we've set the pace."
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

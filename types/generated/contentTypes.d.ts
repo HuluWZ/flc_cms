@@ -676,6 +676,45 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutAbout extends Schema.SingleType {
+  collectionName: 'abouts';
+  info: {
+    singularName: 'about';
+    pluralName: 'abouts';
+    displayName: 'About';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Beyond   Results'>;
+    descriptionOne: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<"We're all about Consumer Engagement and Experiential Marketing, across four dynamic business verticals: Shopper Marketing & Brand Activations, Events & Exhibitions, social media & Influencer Management, and Production & Model Management. We provide a 180* BTL approach to our clients.">;
+    descriptionTwo: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<"With over a decade of shaping the industry, we've created unmatched experiences. Our journey spans 14 years, during which we've partnered with over 75 brands, curating over 1000+ successful campaigns.   We have the experience of working with companies such as Huawei, Samsung, Hisense, Acer, P&G, Nestle, Aujan Coca Cola, Mondelez, IFFCO, Etude House, Coty Middle East, Estee Lauder \u2013 the list goes on. From conceptualization to strategy, from consumer engagement to online and on-ground brilliance, we've not just kept up with the ever-changing marketing trends; we've set the pace.">;
+    image: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about.about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about.about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: 'blogs';
   info: {
@@ -734,6 +773,208 @@ export interface ApiBlogTypeBlogType extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::blog-type.blog-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCaseStudyCaseStudy extends Schema.SingleType {
+  collectionName: 'case_studies';
+  info: {
+    singularName: 'case-study';
+    pluralName: 'case-studies';
+    displayName: 'CaseStudy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Beyond  Results'>;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::case-study.case-study',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::case-study.case-study',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiClientClient extends Schema.SingleType {
+  collectionName: 'clients';
+  info: {
+    singularName: 'client';
+    pluralName: 'clients';
+    displayName: 'Client';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Clients'>;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<"Our diverse clientele fuels our passion for crafting standout campaigns. Join our league of clients and let's create marketing wonders together!">;
+    images: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::client.client',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::client.client',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'Footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla'>;
+    logo: Attribute.Media & Attribute.Required;
+    phone: Attribute.String & Attribute.DefaultTo<'+971 4 4548684'>;
+    email: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'talk2us@flc-me.com'>;
+    uaeAddress: Attribute.String &
+      Attribute.DefaultTo<'1501, Concord Tower, Media City, PO Box 283795, Dubai, UAE.'>;
+    indiaAddress: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'401 B, Unitech Arcadia, South City 2, Sec 49, Gurugram - 122018 India.'>;
+    ksaAddress: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'Al Tadamun Al Arabi Street, Mishrifah Dist, Jeddah SA'>;
+    copyright: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'\u00A9 2023 FLC Group. All Rights Reserved.'>;
+    follow: Attribute.String & Attribute.DefaultTo<'Follow Us'>;
+    linkedin: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'https://www.linkedin.com/'>;
+    facebook: Attribute.String & Attribute.DefaultTo<'https://facebook.com'>;
+    instagram: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'https://instagram.com/'>;
+    whatsapp: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'https://web.whatsapp.com/'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHeaderHeader extends Schema.SingleType {
+  collectionName: 'headers';
+  info: {
+    singularName: 'header';
+    pluralName: 'headers';
+    displayName: 'Home';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    logo: Attribute.Media & Attribute.Required;
+    background: Attribute.Media & Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Beyond  Experiences'>;
+    more: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Learn More'>;
+    sectionTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Beyond  Marketing'>;
+    sectionDescription: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'Join us, as we navigate the uncharted waters of experiential marketing.  At FLC, we are the dreamers, the explorers and the architects crafting immersive moments that captivate hearts and minds.'>;
+    productType: Attribute.Enumeration<
+      [
+        'Integrated',
+        'FMCG',
+        'Electronics ',
+        'Fashion & Lifestyle ',
+        'Food & Beverage'
+      ]
+    >;
+    sectionLeftTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Honor Magic Pro Launch'>;
+    sectionLeftDesc: Attribute.Text &
+      Attribute.DefaultTo<'Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla  Learn more'>;
+    sectionLeftImg: Attribute.Media;
+    sectionMidTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Undiz Influencers'>;
+    sectionMidDesc: Attribute.String;
+    sectionMidImg: Attribute.Media & Attribute.Required;
+    sectionRightTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Ajmal Perfumes'>;
+    sectionRightDesc: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla  Learn more'>;
+    sectionRightImg: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::header.header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::header.header',
       'oneToOne',
       'admin::user'
     > &
@@ -857,6 +1098,55 @@ export interface ApiServiceService extends Schema.CollectionType {
   };
 }
 
+export interface ApiServiceStaticServiceStatic extends Schema.SingleType {
+  collectionName: 'service_statics';
+  info: {
+    singularName: 'service-static';
+    pluralName: 'service-statics';
+    displayName: 'ServiceStatic';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.DefaultTo<'Growth  Partner'>;
+    description: Attribute.RichText &
+      Attribute.Required &
+      Attribute.DefaultTo<"Your success is our goal. Through dynamic strategies and adaptable marketing, we're your growth catalysts. As an extension of your team, we navigate the digital landscape, curate events, and orchestrate holistic campaigns, turning every step into measurable achievements.">;
+    background: Attribute.Media & Attribute.Required;
+    reviewerName: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Nicolas Hyde'>;
+    reviewerTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Marketing Director'>;
+    reviewerMessage: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo Nicolas Hyde Marketing Director'>;
+    ratingCount: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<5>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service-static.service-static',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service-static.service-static',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSubServiceSubService extends Schema.CollectionType {
   collectionName: 'sub_services';
   info: {
@@ -909,11 +1199,17 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::about.about': ApiAboutAbout;
       'api::blog.blog': ApiBlogBlog;
       'api::blog-type.blog-type': ApiBlogTypeBlogType;
+      'api::case-study.case-study': ApiCaseStudyCaseStudy;
+      'api::client.client': ApiClientClient;
+      'api::footer.footer': ApiFooterFooter;
+      'api::header.header': ApiHeaderHeader;
       'api::product.product': ApiProductProduct;
       'api::product-type.product-type': ApiProductTypeProductType;
       'api::service.service': ApiServiceService;
+      'api::service-static.service-static': ApiServiceStaticServiceStatic;
       'api::sub-service.sub-service': ApiSubServiceSubService;
     }
   }

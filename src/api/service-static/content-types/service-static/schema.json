@@ -1,0 +1,54 @@
+{
+  "kind": "singleType",
+  "collectionName": "service_statics",
+  "info": {
+    "singularName": "service-static",
+    "pluralName": "service-statics",
+    "displayName": "ServiceStatic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Growth  Partner",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext",
+      "default": "Your success is our goal. Through dynamic strategies and adaptable marketing, we're your growth catalysts. As an extension of your team, we navigate the digital landscape, curate events, and orchestrate holistic campaigns, turning every step into measurable achievements.",
+      "required": true
+    },
+    "background": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "reviewerName": {
+      "type": "string",
+      "default": "Nicolas Hyde",
+      "required": true
+    },
+    "reviewerTitle": {
+      "type": "string",
+      "default": "Marketing Director",
+      "required": true
+    },
+    "reviewerMessage": {
+      "type": "text",
+      "default": "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo Nicolas Hyde Marketing Director",
+      "required": true
+    },
+    "ratingCount": {
+      "type": "integer",
+      "default": 5,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "kind": "singleType",
+  "collectionName": "headers",
+  "info": {
+    "singularName": "header",
+    "pluralName": "headers",
+    "displayName": "Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "background": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Beyond  Experiences"
+    },
+    "more": {
+      "type": "string",
+      "default": "Learn More",
+      "required": true
+    },
+    "sectionTitle": {
+      "type": "string",
+      "default": "Beyond  Marketing",
+      "required": true
+    },
+    "sectionDescription": {
+      "type": "text",
+      "default": "Join us, as we navigate the uncharted waters of experiential marketing.  At FLC, we are the dreamers, the explorers and the architects crafting immersive moments that captivate hearts and minds.",
+      "required": true
+    },
+    "productType": {
+      "type": "enumeration",
+      "enum": [
+        "Integrated",
+        "FMCG",
+        "Electronics ",
+        "Fashion & Lifestyle ",
+        "Food & Beverage"
+      ]
+    },
+    "sectionLeftTitle": {
+      "type": "string",
+      "default": "Honor Magic Pro Launch",
+      "required": true
+    },
+    "sectionLeftDesc": {
+      "type": "text",
+      "default": "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla  Learn more"
+    },
+    "sectionLeftImg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "sectionMidTitle": {
+      "type": "string",
+      "default": "Undiz Influencers",
+      "required": true
+    },
+    "sectionMidDesc": {
+      "type": "string"
+    },
+    "sectionMidImg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "sectionRightTitle": {
+      "type": "string",
+      "default": "Ajmal Perfumes",
+      "required": true
+    },
+    "sectionRightDesc": {
+      "type": "text",
+      "default": "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla  Learn more",
+      "required": true
+    },
+    "sectionRightImg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
