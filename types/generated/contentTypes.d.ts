@@ -682,6 +682,7 @@ export interface ApiAboutAbout extends Schema.SingleType {
     singularName: 'about';
     pluralName: 'abouts';
     displayName: 'About';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -697,6 +698,24 @@ export interface ApiAboutAbout extends Schema.SingleType {
       Attribute.Required &
       Attribute.DefaultTo<"With over a decade of shaping the industry, we've created unmatched experiences. Our journey spans 14 years, during which we've partnered with over 75 brands, curating over 1000+ successful campaigns.   We have the experience of working with companies such as Huawei, Samsung, Hisense, Acer, P&G, Nestle, Aujan Coca Cola, Mondelez, IFFCO, Etude House, Coty Middle East, Estee Lauder \u2013 the list goes on. From conceptualization to strategy, from consumer engagement to online and on-ground brilliance, we've not just kept up with the ever-changing marketing trends; we've set the pace.">;
     image: Attribute.Media & Attribute.Required;
+    value: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Our Values'>;
+    award: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Awards'>;
+    timeline1Year: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'2009'>;
+    timeline1Description: Attribute.Text & Attribute.Required;
+    timeline2Year: Attribute.String & Attribute.Required;
+    timeline2Description: Attribute.Text & Attribute.Required;
+    timeline3Year: Attribute.String & Attribute.Required;
+    timeline3Description: Attribute.Text & Attribute.Required;
+    timeline4Year: Attribute.String & Attribute.Required;
+    timeline4Description: Attribute.Text & Attribute.Required;
+    timeline5Year: Attribute.String & Attribute.Required;
+    timeline5Description: Attribute.Text & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -708,6 +727,38 @@ export interface ApiAboutAbout extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::about.about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAwardAward extends Schema.CollectionType {
+  collectionName: 'awards';
+  info: {
+    singularName: 'award';
+    pluralName: 'awards';
+    displayName: 'Award';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    desciption: Attribute.Text & Attribute.Required;
+    date: Attribute.Date;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::award.award',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::award.award',
       'oneToOne',
       'admin::user'
     > &
@@ -786,6 +837,7 @@ export interface ApiCaseStudyCaseStudy extends Schema.SingleType {
     singularName: 'case-study';
     pluralName: 'case-studies';
     displayName: 'CaseStudy';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -797,6 +849,7 @@ export interface ApiCaseStudyCaseStudy extends Schema.SingleType {
     description: Attribute.Text &
       Attribute.Required &
       Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud'>;
+    background: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -852,12 +905,86 @@ export interface ApiClientClient extends Schema.SingleType {
   };
 }
 
+export interface ApiContactContact extends Schema.SingleType {
+  collectionName: 'contacts';
+  info: {
+    singularName: 'contact';
+    pluralName: 'contacts';
+    displayName: 'Contact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'happy to partner!'>;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud'>;
+    officeTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Our offices'>;
+    footer: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'We are always on the lookout for new talent!  Join our team'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactUsContactUs extends Schema.CollectionType {
+  collectionName: 'contact_uses';
+  info: {
+    singularName: 'contact-us';
+    pluralName: 'contact-uses';
+    displayName: 'ContactUs';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    email: Attribute.String & Attribute.Required;
+    message: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-us.contact-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-us.contact-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFooterFooter extends Schema.SingleType {
   collectionName: 'footers';
   info: {
     singularName: 'footer';
     pluralName: 'footers';
     displayName: 'Footer';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -893,6 +1020,37 @@ export interface ApiFooterFooter extends Schema.SingleType {
     whatsapp: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'https://web.whatsapp.com/'>;
+    talk: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Talk to us'>;
+    usa: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'USA Office'>;
+    ksa: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'KSA Office'>;
+    india: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'India Office'>;
+    logoFb: Attribute.Media & Attribute.Required;
+    logoLN: Attribute.Media & Attribute.Required;
+    logoIG: Attribute.Media & Attribute.Required;
+    logoWS: Attribute.Media & Attribute.Required;
+    links: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Quick links'>;
+    linkAbout: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'About'>;
+    linkServices: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Services'>;
+    linkJoin: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Join the team'>;
+    visit: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Visit us'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -964,6 +1122,12 @@ export interface ApiHeaderHeader extends Schema.SingleType {
       Attribute.Required &
       Attribute.DefaultTo<'Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla  Learn more'>;
     sectionRightImg: Attribute.Media & Attribute.Required;
+    blogSectionHeader: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'From our blog'>;
+    blogSection: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'We are curiosity-driven'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -975,6 +1139,77 @@ export interface ApiHeaderHeader extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::header.header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHistoryHistory extends Schema.CollectionType {
+  collectionName: 'histories';
+  info: {
+    singularName: 'history';
+    pluralName: 'histories';
+    displayName: 'History';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    date: Attribute.Date &
+      Attribute.Required &
+      Attribute.DefaultTo<'2023-08-30'>;
+    description: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::history.history',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::history.history',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiJoinTeamJoinTeam extends Schema.SingleType {
+  collectionName: 'join_teams';
+  info: {
+    singularName: 'join-team';
+    pluralName: 'join-teams';
+    displayName: 'JoinTeam';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'The team'>;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<"We're all about Consumer Engagement and Experiential Marketing, across four dynamic business verticals: Shopper Marketing & Brand Activations, Events & Exhibitions, social media & Influencer Management, and Production & Model Management. We provide a 180* BTL approach to our clients.">;
+    join: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'We are always on the lookout for new talent!  Join our team'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::join-team.join-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::join-team.join-team',
       'oneToOne',
       'admin::user'
     > &
@@ -1183,6 +1418,62 @@ export interface ApiSubServiceSubService extends Schema.CollectionType {
   };
 }
 
+export interface ApiTeamTeam extends Schema.CollectionType {
+  collectionName: 'teams';
+  info: {
+    singularName: 'team';
+    pluralName: 'teams';
+    displayName: 'Team';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    jobTitle: Attribute.String & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::team.team', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::team.team', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiValueValue extends Schema.CollectionType {
+  collectionName: 'values';
+  info: {
+    singularName: 'value';
+    pluralName: 'values';
+    displayName: 'Value';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    description: Attribute.Text & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::value.value',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::value.value',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Shared {
     export interface ContentTypes {
@@ -1200,17 +1491,24 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
+      'api::award.award': ApiAwardAward;
       'api::blog.blog': ApiBlogBlog;
       'api::blog-type.blog-type': ApiBlogTypeBlogType;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::client.client': ApiClientClient;
+      'api::contact.contact': ApiContactContact;
+      'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
+      'api::history.history': ApiHistoryHistory;
+      'api::join-team.join-team': ApiJoinTeamJoinTeam;
       'api::product.product': ApiProductProduct;
       'api::product-type.product-type': ApiProductTypeProductType;
       'api::service.service': ApiServiceService;
       'api::service-static.service-static': ApiServiceStaticServiceStatic;
       'api::sub-service.sub-service': ApiSubServiceSubService;
+      'api::team.team': ApiTeamTeam;
+      'api::value.value': ApiValueValue;
     }
   }
 }

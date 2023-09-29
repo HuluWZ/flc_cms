@@ -21,12 +21,12 @@
       ]
     },
     "background": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "title": {
       "type": "string",
@@ -68,11 +68,12 @@
       "default": "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla  Learn more"
     },
     "sectionLeftImg": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "sectionMidTitle": {
       "type": "string",
@@ -83,12 +84,12 @@
       "type": "string"
     },
     "sectionMidImg": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "sectionRightTitle": {
       "type": "string",
@@ -101,11 +102,21 @@
       "required": true
     },
     "sectionRightImg": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "blogSectionHeader": {
+      "type": "string",
+      "default": "From our blog",
+      "required": true
+    },
+    "blogSection": {
+      "type": "string",
+      "default": "We are curiosity-driven",
       "required": true
     }
   }

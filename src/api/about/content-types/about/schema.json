@@ -4,7 +4,8 @@
   "info": {
     "singularName": "about",
     "pluralName": "abouts",
-    "displayName": "About"
+    "displayName": "About",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -27,11 +28,62 @@
       "default": "With over a decade of shaping the industry, we've created unmatched experiences. Our journey spans 14 years, during which we've partnered with over 75 brands, curating over 1000+ successful campaigns.   We have the experience of working with companies such as Huawei, Samsung, Hisense, Acer, P&G, Nestle, Aujan Coca Cola, Mondelez, IFFCO, Etude House, Coty Middle East, Estee Lauder – the list goes on. From conceptualization to strategy, from consumer engagement to online and on-ground brilliance, we've not just kept up with the ever-changing marketing trends; we've set the pace."
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "value": {
+      "type": "string",
+      "default": "Our Values",
+      "required": true
+    },
+    "award": {
+      "type": "string",
+      "default": "Awards",
+      "required": true
+    },
+    "timeline1Year": {
+      "type": "string",
+      "required": true,
+      "default": "2009"
+    },
+    "timeline1Description": {
+      "type": "text",
+      "required": true
+    },
+    "timeline2Year": {
+      "type": "string",
+      "required": true
+    },
+    "timeline2Description": {
+      "type": "text",
+      "required": true
+    },
+    "timeline3Year": {
+      "type": "string",
+      "required": true
+    },
+    "timeline3Description": {
+      "type": "text",
+      "required": true
+    },
+    "timeline4Year": {
+      "type": "string",
+      "required": true
+    },
+    "timeline4Description": {
+      "type": "text",
+      "required": true
+    },
+    "timeline5Year": {
+      "type": "string",
+      "required": true
+    },
+    "timeline5Description": {
+      "type": "text",
       "required": true
     }
   }

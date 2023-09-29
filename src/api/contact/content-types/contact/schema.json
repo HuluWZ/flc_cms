@@ -1,11 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "case_studies",
+  "collectionName": "contacts",
   "info": {
-    "singularName": "case-study",
-    "pluralName": "case-studies",
-    "displayName": "CaseStudy",
-    "description": ""
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact"
   },
   "options": {
     "draftAndPublish": true
@@ -14,7 +13,7 @@
   "attributes": {
     "title": {
       "type": "string",
-      "default": "Beyond  Results",
+      "default": "happy to partner!",
       "required": true
     },
     "description": {
@@ -22,12 +21,14 @@
       "default": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud",
       "required": true
     },
-    "background": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
+    "officeTitle": {
+      "type": "string",
+      "default": "Our offices",
+      "required": true
+    },
+    "footer": {
+      "type": "text",
+      "default": "We are always on the lookout for new talent!  Join our team",
       "required": true
     }
   }

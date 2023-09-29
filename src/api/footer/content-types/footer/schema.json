@@ -4,7 +4,8 @@
   "info": {
     "singularName": "footer",
     "pluralName": "footers",
-    "displayName": "Footer"
+    "displayName": "Footer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,12 +18,12 @@
       "required": true
     },
     "logo": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "phone": {
       "type": "string",
@@ -74,6 +75,83 @@
       "type": "string",
       "default": "https://web.whatsapp.com/",
       "required": true
+    },
+    "talk": {
+      "type": "string",
+      "default": "Talk to us",
+      "required": true
+    },
+    "usa": {
+      "type": "string",
+      "default": "USA Office",
+      "required": true
+    },
+    "ksa": {
+      "type": "string",
+      "default": "KSA Office",
+      "required": true
+    },
+    "india": {
+      "type": "string",
+      "default": "India Office",
+      "required": true
+    },
+    "logoFb": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "logoLN": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "logoIG": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "logoWS": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "links": {
+      "type": "string",
+      "default": "Quick links",
+      "required": true
+    },
+    "linkAbout": {
+      "type": "string",
+      "default": "About",
+      "required": true
+    },
+    "linkServices": {
+      "type": "string",
+      "default": "Services",
+      "required": true
+    },
+    "linkJoin": {
+      "type": "string",
+      "default": "Join the team",
+      "required": true
+    },
+    "visit": {
+      "type": "string",
+      "required": true,
+      "default": "Visit us"
     }
   }
 }

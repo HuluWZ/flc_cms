@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "join_teams",
+  "info": {
+    "singularName": "join-team",
+    "pluralName": "join-teams",
+    "displayName": "JoinTeam"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "The team",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "default": "We're all about Consumer Engagement and Experiential Marketing, across four dynamic business verticals: Shopper Marketing & Brand Activations, Events & Exhibitions, social media & Influencer Management, and Production & Model Management. We provide a 180* BTL approach to our clients.",
+      "required": true
+    },
+    "join": {
+      "type": "text",
+      "default": "We are always on the lookout for new talent!  Join our team",
+      "required": true
+    }
+  }
+}
