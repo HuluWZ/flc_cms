@@ -659,6 +659,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.role'
     >;
     fullname: Attribute.String & Attribute.Required;
+    blogs: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::blog.blog'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -772,9 +777,11 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     singularName: 'blog';
     pluralName: 'blogs';
     displayName: 'Blog';
+    description: '';
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     title: Attribute.String & Attribute.Required & Attribute.Unique;
@@ -785,13 +792,12 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       'manyToOne',
       'api::blog-type.blog-type'
     >;
+    admin_user: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'>;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'>;
   };
 }
 
@@ -849,7 +855,6 @@ export interface ApiCaseStudyCaseStudy extends Schema.SingleType {
     description: Attribute.Text &
       Attribute.Required &
       Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud'>;
-    background: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1217,12 +1222,36 @@ export interface ApiJoinTeamJoinTeam extends Schema.SingleType {
   };
 }
 
+export interface ApiNavNav extends Schema.CollectionType {
+  collectionName: 'navs';
+  info: {
+    singularName: 'nav';
+    pluralName: 'navs';
+    displayName: 'Nav';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    link: Attribute.String & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::nav.nav', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::nav.nav', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Schema.CollectionType {
   collectionName: 'products';
   info: {
     singularName: 'product';
     pluralName: 'products';
     displayName: 'Product';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1241,6 +1270,10 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToOne',
       'api::product-type.product-type'
     >;
+    thumbnail: Attribute.Media & Attribute.Required;
+    objective: Attribute.Text & Attribute.Required;
+    idea: Attribute.Text & Attribute.Required;
+    outcome: Attribute.Text & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1502,6 +1535,7 @@ declare module '@strapi/strapi' {
       'api::header.header': ApiHeaderHeader;
       'api::history.history': ApiHistoryHistory;
       'api::join-team.join-team': ApiJoinTeamJoinTeam;
+      'api::nav.nav': ApiNavNav;
       'api::product.product': ApiProductProduct;
       'api::product-type.product-type': ApiProductTypeProductType;
       'api::service.service': ApiServiceService;
