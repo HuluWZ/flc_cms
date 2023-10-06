@@ -745,6 +745,7 @@ export interface ApiAwardAward extends Schema.CollectionType {
     singularName: 'award';
     pluralName: 'awards';
     displayName: 'Award';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -752,7 +753,7 @@ export interface ApiAwardAward extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required;
     desciption: Attribute.Text & Attribute.Required;
-    date: Attribute.Date;
+    year: Attribute.Integer & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1366,6 +1367,38 @@ export interface ApiServiceService extends Schema.CollectionType {
   };
 }
 
+export interface ApiServiceHomeServiceHome extends Schema.CollectionType {
+  collectionName: 'service_homes';
+  info: {
+    singularName: 'service-home';
+    pluralName: 'service-homes';
+    displayName: 'ServiceHome';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service-home.service-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service-home.service-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServiceStaticServiceStatic extends Schema.SingleType {
   collectionName: 'service_statics';
   info: {
@@ -1539,6 +1572,7 @@ declare module '@strapi/strapi' {
       'api::product.product': ApiProductProduct;
       'api::product-type.product-type': ApiProductTypeProductType;
       'api::service.service': ApiServiceService;
+      'api::service-home.service-home': ApiServiceHomeServiceHome;
       'api::service-static.service-static': ApiServiceStaticServiceStatic;
       'api::sub-service.sub-service': ApiSubServiceSubService;
       'api::team.team': ApiTeamTeam;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "award",
     "pluralName": "awards",
-    "displayName": "Award"
+    "displayName": "Award",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,8 +20,9 @@
       "type": "text",
       "required": true
     },
-    "date": {
-      "type": "date"
+    "year": {
+      "type": "integer",
+      "required": true
     }
   }
 }
