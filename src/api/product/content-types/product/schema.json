@@ -59,6 +59,11 @@
     "outcome": {
       "type": "text",
       "required": true
+    },
+    "showInHomePage": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

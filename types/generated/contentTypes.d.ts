@@ -1275,6 +1275,9 @@ export interface ApiProductProduct extends Schema.CollectionType {
     objective: Attribute.Text & Attribute.Required;
     idea: Attribute.Text & Attribute.Required;
     outcome: Attribute.Text & Attribute.Required;
+    showInHomePage: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
