@@ -1258,7 +1258,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    name: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
     overview: Attribute.RichText &
       Attribute.Required &
@@ -1275,9 +1275,16 @@ export interface ApiProductProduct extends Schema.CollectionType {
     objective: Attribute.Text & Attribute.Required;
     idea: Attribute.Text & Attribute.Required;
     outcome: Attribute.Text & Attribute.Required;
-    showInHomePage: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
+    showInHomePage: Attribute.Boolean & Attribute.DefaultTo<false>;
+    tab: Attribute.Enumeration<
+      [
+        'Integrated',
+        'Marketing',
+        'Events & Exhibitions',
+        'Digital',
+        'Content  Production '
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

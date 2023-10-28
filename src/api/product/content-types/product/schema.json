@@ -15,7 +15,7 @@
     "name": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": false
     },
     "description": {
       "type": "text",
@@ -63,7 +63,18 @@
     "showInHomePage": {
       "type": "boolean",
       "default": false,
-      "required": true
+      "required": false
+    },
+    "tab": {
+      "type": "enumeration",
+      "enum": [
+        "Integrated",
+        "Marketing",
+        "Events & Exhibitions",
+        "Digital",
+        "Content  Production "
+      ],
+      "required": false
     }
   }
 }
