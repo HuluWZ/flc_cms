@@ -76,6 +76,9 @@
         "Content  Production "
       ],
       "required": false
+    },
+    "url": {
+      "type": "string"
     }
   }
 }

@@ -19,8 +19,5 @@ module.exports = ({ env }) => ({
         delete: {},
       },
     },
-  },
-  "video-field":{
-    enabled:true
-}
+  }
 });

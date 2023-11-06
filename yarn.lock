@@ -1073,11 +1073,6 @@
     escape-string-regexp "^2.0.0"
     lodash.deburr "^4.1.0"
 
-"@sklinet/strapi-plugin-video-field@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.npmjs.org/@sklinet/strapi-plugin-video-field/-/strapi-plugin-video-field-1.0.5.tgz"
-  integrity sha512-0mdZWCdEv0kJEAGTvJC3NVU6qSxgAk79+5EDXxGQVHvH+H2Jj0G8yiBpytg3SGoGuW5911K3BJdt7qpDBDnE3g==
-
 "@strapi/admin@4.13.7":
   version "4.13.7"
   resolved "https://registry.npmjs.org/@strapi/admin/-/admin-4.13.7.tgz"
@@ -1450,7 +1445,7 @@
     "@strapi/utils" "4.13.7"
     fs-extra "10.0.0"
 
-"@strapi/strapi@^4.0.0", "@strapi/strapi@^4.3.4", "@strapi/strapi@^4.9.0", "@strapi/strapi@4.13.7":
+"@strapi/strapi@^4.3.4", "@strapi/strapi@^4.9.0", "@strapi/strapi@4.13.7":
   version "4.13.7"
   resolved "https://registry.npmjs.org/@strapi/strapi/-/strapi-4.13.7.tgz"
   integrity sha512-t7HaENDxXJEKg1Lx+9lW5ifWckm5GRAp0tJmHtbzlkgDENpCJJPrcEa8mTiD8JNZrW3JUZV2TeHMTT4znKWleQ==

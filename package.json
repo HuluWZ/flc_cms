@@ -10,7 +10,6 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@sklinet/strapi-plugin-video-field": "^1.0.5",
     "@strapi/plugin-i18n": "4.13.7",
     "@strapi/plugin-users-permissions": "4.13.7",
     "@strapi/provider-upload-cloudinary": "^4.13.7",
