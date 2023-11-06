@@ -1271,7 +1271,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToOne',
       'api::product-type.product-type'
     >;
-    thumbnail: Attribute.Media & Attribute.Required;
     objective: Attribute.Text & Attribute.Required;
     idea: Attribute.Text & Attribute.Required;
     outcome: Attribute.Text & Attribute.Required;
@@ -1285,6 +1284,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
         'Content  Production '
       ]
     >;
+    thumbnailUrl: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

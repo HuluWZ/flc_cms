@@ -40,15 +40,6 @@
       "target": "api::product-type.product-type",
       "inversedBy": "products"
     },
-    "thumbnail": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "videos"
-      ]
-    },
     "objective": {
       "type": "text",
       "required": true
@@ -77,8 +68,9 @@
       ],
       "required": false
     },
-    "url": {
-      "type": "string"
+    "thumbnailUrl": {
+      "type": "string",
+      "required": true
     }
   }
 }
