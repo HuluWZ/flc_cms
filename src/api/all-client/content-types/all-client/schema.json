@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "all_clients",
+  "info": {
+    "singularName": "all-client",
+    "pluralName": "all-clients",
+    "displayName": "AllClient",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "FMCG",
+        "Electronics",
+        "Retail",
+        "Fashion & Lifestyle",
+        "Food & Beverage",
+        "Luxury",
+        "Automobiles & Airlines",
+        "Tobacco & Beverages",
+        "Banks",
+        "Agency & Media"
+      ],
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

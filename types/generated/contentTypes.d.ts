@@ -739,6 +739,52 @@ export interface ApiAboutAbout extends Schema.SingleType {
   };
 }
 
+export interface ApiAllClientAllClient extends Schema.CollectionType {
+  collectionName: 'all_clients';
+  info: {
+    singularName: 'all-client';
+    pluralName: 'all-clients';
+    displayName: 'AllClient';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    type: Attribute.Enumeration<
+      [
+        'FMCG',
+        'Electronics',
+        'Retail',
+        'Fashion & Lifestyle',
+        'Food & Beverage',
+        'Luxury',
+        'Automobiles & Airlines',
+        'Tobacco & Beverages',
+        'Banks',
+        'Agency & Media'
+      ]
+    > &
+      Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::all-client.all-client',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::all-client.all-client',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiAwardAward extends Schema.CollectionType {
   collectionName: 'awards';
   info: {
@@ -1567,6 +1613,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
+      'api::all-client.all-client': ApiAllClientAllClient;
       'api::award.award': ApiAwardAward;
       'api::blog.blog': ApiBlogBlog;
       'api::blog-type.blog-type': ApiBlogTypeBlogType;
