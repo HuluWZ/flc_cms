@@ -938,7 +938,6 @@ export interface ApiClientClient extends Schema.SingleType {
     description: Attribute.Text &
       Attribute.Required &
       Attribute.DefaultTo<"Our diverse clientele fuels our passion for crafting standout campaigns. Join our league of clients and let's create marketing wonders together!">;
-    images: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
