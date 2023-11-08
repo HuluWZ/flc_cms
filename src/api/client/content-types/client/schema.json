@@ -21,13 +21,6 @@
       "type": "text",
       "default": "Our diverse clientele fuels our passion for crafting standout campaigns. Join our league of clients and let's create marketing wonders together!",
       "required": true
-    },
-    "images": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": true
     }
   }
 }
